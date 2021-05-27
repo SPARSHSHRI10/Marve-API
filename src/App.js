@@ -18,13 +18,13 @@ const App = () => {
     const fetchItems = async() => {
       if(query === '')
       {
-        const resp = await axios.get(`http://gateway.marvel.com/v1/public/characters?ts=1&apikey=ec803ef1202e4b24d7a6a2e959e86480&hash=${hash}`)
+        const resp = await axios.get(`https://gateway.marvel.com/v1/public/characters?ts=1&apikey=ec803ef1202e4b24d7a6a2e959e86480&hash=${hash}`)
         console.log(resp.data.data.results)
         setItems(resp.data.data.results)
         setLoading(false)
       }else
       {
-        const resp = await axios.get(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${query}&ts=1&apikey=ec803ef1202e4b24d7a6a2e959e86480&hash=${hash}`)
+        const resp = await axios.get(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${query}&ts=1&apikey=ec803ef1202e4b24d7a6a2e959e86480&hash=${hash}`)
         console.log(resp.data.data.results)
         setItems(resp.data.data.results)
         setLoading(false)
